@@ -5,3 +5,23 @@
   border-bottom: 1px dashed #d0d0d0;
   padding: 32px;
 }
+
+.menuusuario{
+  position: absolute;
+  right: 32px;
+  top:70px;
+  z-index: 1;
+}
+
+.itemclicavel{
+  font-weight: bold;
+}
+
+.personcircle{
+  cursor: pointer;
+}
+
+.row{
+  margin-right: 0px;
+  margin-left: 0px;
+}

@@ -1,0 +1,39 @@
+.card_img{
+width: 120px;
+height: 120px;
+border-radius: 100%;
+overflow: hidden;
+margin: -60px auto 0;
+}
+
+.card_img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.card_info{
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.background{
+  background-color: rgba(219, 219, 219, 0.395);
+  width: 100%;
+  padding-top:  65px;
+}
+
+.list-group {
+  flex-direction: row;
+}
+
+li{
+  list-style-type:  none;
+}
+
+.card_category{
+  width: 190px;
+  text-align: center;
+  margin-top: 10px;
+}
