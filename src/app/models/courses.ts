@@ -5,6 +5,6 @@ export class Courses {
   description: string='';
   cost: number = 0;
   image:string ='';
-  duration: number = 0;
+  duration: string = '';
 
 }

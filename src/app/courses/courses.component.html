@@ -1,11 +1,16 @@
-<div class="row">
-  <div *ngFor="let courses of Course" class="card  " style="width: 18rem; ">
-  <img src="{{courses.image}}" class="card-img-top" alt="user-image">
-  <div class="card-body">
-    <h5  class="card-title">{{courses.title}}</h5>
-    <p class="card-text">{{courses.description}}</p>
-    <a href="#" class="btn btn-primary">Saiba Mais</a>
-    <p>Duração: {{courses.duration}}h</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 card-content" *ngFor="let courses of Course">
+      <div class="card" style="width: 18rem">
+        <img src="{{ courses.image }}" class="card-img-top" alt="user-image" />
+        <div class="card-body">
+          <h5 class="card-title">{{ courses.title }}</h5>
+          <p class="card-text truncated-text">{{ courses.description }}</p>
+          <p class="card-text">Valor: {{ courses.cost }}</p>
+          <p class="card-text">Duração: {{ courses.duration }}</p>
+          <a routerLink ="/course-details"  class="btn btn-primary">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>

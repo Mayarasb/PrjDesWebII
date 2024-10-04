@@ -1,5 +1,29 @@
+.card_content{
+
+  margin-top: 65px;
+
+}
 .card{
   padding: 20px;
-  margin: 30px;
-  
+  margin: 15px;
+  text-align: center;
+}
+
+.card-text{
+  text-align: justify;
+}
+.truncated-text{
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.truncated-text:hover{
+  overflow: visible;
+  white-space: normal;
+}
+
+.card-img-top{
+  width: 250px;
+  height: 220px;
 }
