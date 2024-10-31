@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Courses } from './../models/courses';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Route, Router, RouterLink, RouterLinkActive } from '@angular/router';
+
 
 @Component({
   selector: 'app-courses',
@@ -10,7 +11,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.css',
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router){}
+  ngOnInit(): void {
+   const id = this.activatedRoute.snapshot.paramMap.get('id')
+   this.Course = this.Course.filter((course) => course.idCategory === Number(id));
+   this.router.navigate(['/courses', {id}]);
+  }
   Course: Courses[] = [
     {
       id: 1,
