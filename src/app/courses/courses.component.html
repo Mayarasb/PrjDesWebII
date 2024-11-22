@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3 card-content" *ngFor="let courses of Course">
+    <div class="col-3 card-content" *ngFor="let courses of data$ | async">
       <div class="card" style="width: 18rem">
         <img src="{{ courses.image }}" class="card-img-top" alt="user-image" />
         <div class="card-body">

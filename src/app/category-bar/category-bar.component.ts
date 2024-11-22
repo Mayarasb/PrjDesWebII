@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Category } from './../models/category';
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CategoryService } from './category.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-category-bar',
@@ -10,14 +12,15 @@ import { RouterModule } from '@angular/router';
   templateUrl: './category-bar.component.html',
   styleUrl: './category-bar.component.css'
 })
-export class CategoryBarComponent {
-
-  categories : Category[]=[
-    {id:1, title:'Cursos de TI',image:'https://storage.googleapis.com/static.meupc.net/wp/1/2022/02/GettyImages-932559358.jpg'},
-    {id: 2, title: 'Banco de Dados', image:'https://blog.unp.br/wp-content/uploads/2022/06/christina-wocintechchat-com-glRqyWJgUeY-unsplash.jpg'},
-    {id: 3, title: 'Python', image:'https://wordpress-cms-ead-prod-assets.quero.space/uploads/2017/11/Curso-de-TI-EaD-1.jpg'},
-    {id: 4, title: 'Desenvolvimento Web', image:'https://www.napratica.org.br/wp-content/uploads/2023/11/ti.png'},
-  ]
-
-
-}
+export class CategoryBarComponent implements OnInit {
+  categories: any = [];
+  constructor(private categoryService: CategoryService){}
+ngOnInit(): void {
+  this.categoryService.getList().subscribe({
+    next:(response: any) => {
+      this.categories = response.categories;
+    },
+    error: (err: any) => {}
+  }
+)}
+  }
